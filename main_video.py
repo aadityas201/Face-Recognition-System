@@ -33,8 +33,10 @@ while (x!=0 or x!=1): # triggering to take photos
             break
         
         
-        path="C:/Users/prajw/Desktop/sem 6/Home-Security-System/unknown"
+        path=os.path.join(os.getcwd(),"unknown","")
+
         
+    
         if(temp_name =="Unknown"):
             cv2.imwrite(os.path.join(path,f"Unknown{number}.png"),temp_image)
             number=number+1   
