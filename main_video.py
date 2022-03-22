@@ -5,6 +5,7 @@ import cv2
 from simple_facerec import SimpleFacerec
 from variable import password
 import os
+from pir_sensor import triggering
 # Encode faces from a folder
 sfr = SimpleFacerec()
 
@@ -14,7 +15,7 @@ temp_name="Unknown"
 return_value,temp_image=cap.read()
 number= len(os.listdir(os.path.join(os.getcwd(),"unknown","")))
 x=1
-while (True): # triggering to take photos
+while (triggering()): # triggering to take photos
    
     return_value,temp_image=cap.read()
    
