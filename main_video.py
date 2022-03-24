@@ -17,10 +17,7 @@ return_value,temp_image=cap.read()
 number= len(os.listdir(os.path.join(os.getcwd(),"unknown","")))
 x=1
 while (triggering()): # triggering to take photos
-   
     return_value,temp_image=cap.read()
-   
-
     # Detect Faces
     face_locations, face_names = sfr.detect_known_faces(temp_image)
     for face_loc, name in zip(face_locations, face_names):
@@ -35,8 +32,6 @@ while (triggering()): # triggering to take photos
     if key == 27:
         break
     path=os.path.join(os.getcwd(),"unknown","")
-
-    
 
     if(temp_name =="Unknown"):
         cv2.imwrite(os.path.join(path,f"Unknown{number}.png"),temp_image)
