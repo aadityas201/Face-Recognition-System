@@ -3,7 +3,8 @@ import imghdr
 import smtplib
 import cv2
 from simple_facerec import SimpleFacerec
-from variable import password
+from dotenv import load_dotenv   #for python-dotenv method
+load_dotenv()                    #for python-dotenv method
 import os
 from pir_sensor import triggering
 # Encode faces from a folder
@@ -41,7 +42,7 @@ while (triggering()): # triggering to take photos
         cv2.imwrite(os.path.join(path,f"Unknown{number}.png"),temp_image)
         Sender_Email = "yoursecuredhome@gmail.com" 
         Reciever_Email = "prajwal.ahetti@gmail.com"
-        Password = "rpnpmrouyqjuordo" 
+        Password = os.environ.get('PASSWORD')
         newMessage = EmailMessage()
         newMessage['Subject'] = "Tresspasser at your doorstep" 
         newMessage['From'] = Sender_Email                   
