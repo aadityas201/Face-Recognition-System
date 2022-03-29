@@ -10,7 +10,7 @@ sfr = SimpleFacerec()
 
 # Load Camera
 cap = cv2.VideoCapture(0)
-temp_name="Unknown"
+temp_name=""
 return_value,temp_image=cap.read()
 number= len(os.listdir(os.path.join(os.getcwd(),"unknown","")))
 x=1
@@ -29,6 +29,7 @@ while (x!=0 or x!=1): # triggering to take photos
             cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 0, 200), 4)
             temp_name=name
             return_value,temp_image=cap.read()
+        print(temp_name)
         cv2.imshow("Frame", frame)
         key = cv2.waitKey(1)
         if key == 27:
