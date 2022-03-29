@@ -22,7 +22,7 @@ print("names = ", known_face_names)
 class SimpleFacerec:
     def __init__(self):
         # Resize frame for a faster speed
-        self.frame_resizing = 0.75
+        self.frame_resizing = 1
 
     def detect_known_faces(self, frame):
         small_frame = cv2.resize(frame, (0, 0), fx=self.frame_resizing, fy=self.frame_resizing)
